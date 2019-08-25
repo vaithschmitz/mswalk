@@ -1,22 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Home from './routes/Home'
-import './index.css';
+import Navbar from './components/Navbar/Navbar'
+import Footer from './components/Footer/Footer'
+import Home from './routes/Home/Home';
+import Splash from './routes/Splash/Splash'
 import * as serviceWorker from './serviceWorker';
-
-
-// const routing = (
-//     <Router>
-//       <div>
-//         <Route component={Navbar}/>
-//         <Route exact path="/" component={Home} />
-//         <Route component={Footer}/>
-//       </div>
-//     </Router>
-// )
 
 
 const routing = ( 
@@ -24,7 +13,7 @@ const routing = (
       <div id='desktopView'>
         <Route component={Navbar}/>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Splash} />
         </Switch>
         <Route component={Footer}/>
       </div>
