@@ -3,3 +3,8 @@
     grid-template-columns: 25vw 25vw 25vw 25vw;
     text-align: center
 }
+
+.Footer-icon{
+    height: 10vh; 
+    object-fit: contain
+}

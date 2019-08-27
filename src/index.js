@@ -15,6 +15,9 @@ const routing = (
           <Route exact path="/" component={Splash} />
         </Switch>
         <Route exact path='/oneK' component={oneK}/>
+        {/* <Route exact path='/sixK' component={sixK}/>
+        <Route exact path='/tenK' component={tenK}/>
+        <Route exact path='/twentyK' component={twentyK}/> */}
       </div>
     </Router>
   )

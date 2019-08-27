@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 code {
@@ -16,17 +16,4 @@ code {
 #desktopView{
   display: grid;
   height: 100vh
-}
-
-#MainApp-Navbar{
-  height: 10vh;
-  width: 100vw
-}
-
-#MainApp{
-  height: 80vh
-}
-
-#MainApp-Footer{
-  height: 10vh
 }
