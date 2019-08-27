@@ -12,3 +12,9 @@
     width: 100%;
     object-fit: contain
 }
+
+#oneK-list{
+    width: 90vw;
+    text-align: center;
+    margin-left: 5vw 
+}

@@ -1,0 +1,14 @@
+#Info-container{
+    text-align: center;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 10vh;
+}
+#Info-important{
+    background-color: #D14900;
+    border-radius: 3px;
+    color: white;
+    margin-top: 10vh;
+    font-weight: bold;
+}
