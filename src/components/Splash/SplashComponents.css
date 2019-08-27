@@ -1,5 +1,11 @@
 #KilometerButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 15vh;
     width: 80vw;
-    background-color: #D14900
+    background-color: #D14900;
+    color: white;
+    font-size: 5vh;
+    border-radius: 3%
 }

@@ -6,4 +6,11 @@ body{
 #Splash-Container{
     display: grid;
     grid-row-gap: 2vh;
+    justify-content: center;
+}
+
+#Splash-Eventbrite{
+    text-align: center;
+    color: #6E26B1;
+    font-weight: bold
 }

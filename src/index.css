@@ -12,3 +12,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#desktopView{
+  display: grid;
+  height: 100vh
+}
+
+#MainApp-Navbar{
+  height: 10vh;
+  width: 100vw
+}
+
+#MainApp{
+  height: 80vh
+}
+
+#MainApp-Footer{
+  height: 10vh
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
@@ -11,11 +12,11 @@ import * as serviceWorker from './serviceWorker';
 const routing = ( 
     <Router>
       <div id='desktopView'>
-        <Route component={Navbar}/>
-        <Switch>
+        <Route component={Navbar} id='MainApp-Navbar'/>
+        <Switch id='MainApp'>
           <Route exact path="/" component={Splash} />
         </Switch>
-        <Route component={Footer}/>
+        <Route component={Footer} id='MainApp-Footer'/>
       </div>
     </Router>
   )
