@@ -1,4 +1,5 @@
 #Footer-Container{
-    height: 10vh;
-    width: 100vw
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw 25vw;
+    text-align: center
 }

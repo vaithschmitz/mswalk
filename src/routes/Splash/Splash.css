@@ -26,6 +26,10 @@ body{
     margin-right: 10vw;
 }
 
+.Splash-btn{
+    text-decoration: none
+}
+
 
 #Splash-Eventbrite{
     text-align: center;

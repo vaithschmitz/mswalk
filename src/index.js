@@ -2,21 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
-import Home from './routes/Home/Home';
 import Splash from './routes/Splash/Splash'
+import oneK from './routes/oneK/oneK'
 import * as serviceWorker from './serviceWorker';
 
 
 const routing = ( 
     <Router>
       <div id='desktopView'>
-        {/* <Route component={Navbar} id='MainApp-Navbar'/> */}
         <Switch id='MainApp'>
           <Route exact path="/" component={Splash} />
         </Switch>
-        {/* <Route component={Footer} id='MainApp-Footer'/> */}
+        <Route exact path='/oneK' component={oneK}/>
       </div>
     </Router>
   )
