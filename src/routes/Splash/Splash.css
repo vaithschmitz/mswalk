@@ -7,10 +7,16 @@ body{
     display: grid; 
 }
 
-#Splash-mslogo, #Splash-mswalkldn{
+#Splash-mslogo{
     justify-self: center;
     height: 10vh;
     width: 30vw;
+    object-fit: contain
+}
+
+#Splash-mswalkldn{
+    justify-self: center;
+    width: 80vw;
     object-fit: contain
 }
 
