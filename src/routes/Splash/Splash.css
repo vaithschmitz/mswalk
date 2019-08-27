@@ -1,16 +1,29 @@
 body{
-    height: 100vh;
+    height: 100%;
     width: 100vw;
 }
 
 #Splash-Container{
-    display: grid;
-    grid-row-gap: 2vh;
-    justify-content: center;
+    display: grid; 
 }
+
+#Splash-mslogo, #Splash-mswalkldn{
+    justify-self: center;
+    height: 10vh;
+    width: 30vw;
+    object-fit: contain
+}
+
+#Splash-text{
+    text-align: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
 
 #Splash-Eventbrite{
     text-align: center;
     color: #6E26B1;
-    font-weight: bold
+    font-weight: bold;
+    text-decoration: none;
 }

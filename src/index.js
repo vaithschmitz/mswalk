@@ -12,11 +12,11 @@ import * as serviceWorker from './serviceWorker';
 const routing = ( 
     <Router>
       <div id='desktopView'>
-        <Route component={Navbar} id='MainApp-Navbar'/>
+        {/* <Route component={Navbar} id='MainApp-Navbar'/> */}
         <Switch id='MainApp'>
           <Route exact path="/" component={Splash} />
         </Switch>
-        <Route component={Footer} id='MainApp-Footer'/>
+        {/* <Route component={Footer} id='MainApp-Footer'/> */}
       </div>
     </Router>
   )
