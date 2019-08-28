@@ -1,9 +1,9 @@
 import React from 'react'
 import './Footer.css'
-import QuestionIcon from './question.png'
-import MapIcon from './map.png'
-import InfoIcon from './info.png'
-import ListIcon from './list.png'
+import QuestionIcon from './gaming.svg'
+import MapIcon from './map.svg'
+import InfoIcon from './information.svg'
+import ListIcon from './view-list.svg'
 
 export default function Footer(){
     return(
