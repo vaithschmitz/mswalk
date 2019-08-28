@@ -4,7 +4,9 @@
     width: 100vw;
     grid-template-areas: 'a' 'b'; 
     grid-template-rows: 90vh 10vh;
+    
 }
+
 
 #Map{
     grid-area: a;
@@ -14,7 +16,9 @@
 }
 
 #oneK-list{
-    width: 90vw;
+    grid-area: a;
+    /* width: 90vw; */
     text-align: center;
-    margin-left: 5vw 
+    /* margin-left: 5vw; */
+    overflow: scroll;
 }

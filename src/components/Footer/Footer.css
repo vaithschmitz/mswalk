@@ -1,7 +1,8 @@
 #Footer-Container{
     display: grid;
     grid-template-columns: 25vw 25vw 25vw 25vw;
-    text-align: center
+    text-align: center;
+    background-color: transparent
 }
 
 .Footer-icon{
