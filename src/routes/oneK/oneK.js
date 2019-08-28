@@ -1,19 +1,17 @@
 import React, {useState, useEffect} from 'react'
 import './oneK.css'
-import Map from './Map.png'
+import Map from '../../components/Map/Map'
 import Info from '../../components/Info/Info'
 import Footer from '../../components/Footer/Footer'
 import List from '../../components/List/List'
-import { compose, withProps } from "recompose"
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
 
 export default function OneK(){
     const [navIs, setNavIs] = useState('map')
-    let REACT_APP_MAPSKEY = process.env.REACT_APP_MAPSKEY
-    let userLat
-    let userLng
-    useEffect(() => {
+    const [userLat, setUserLat] = useState()
+    const [userLng, setUserLng] = useState()
+
+    useEffect(()=>{
         const getPosition = () => {
             if (navigator.geolocation) {
                 navigator.geolocation.watchPosition(showPosition) 
@@ -23,39 +21,18 @@ export default function OneK(){
             }
         }
         const showPosition = (position) => {
-            userLat = position.coords.latitude
-            userLng = position.coords.longitude
+            setUserLat(position.coords.latitude)
+            setUserLng(position.coords.longitude)
         }
         getPosition()
     }, [])
 
-
     
-
-      const MyMapComponent = compose(
-        withProps({
-          googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${REACT_APP_MAPSKEY}&v=3.exp&libraries=geometry,drawing,places`,
-          loadingElement: <div style={{ height: `100%` }} />,
-          containerElement: <div style={{ height: `100%` }} />,
-          mapElement: <div style={{ height: `100%` }} />,
-        }),
-        withScriptjs,
-        withGoogleMap
-      )((props) =>
-        <GoogleMap
-          defaultZoom={8}
-          defaultCenter={{ lat: userLat, lng: userLng }}
-        >
-          {props.isMarkerShown && <Marker position={{ lat: userLat, lng: userLng  }} />}
-        </GoogleMap>
-      )
-
-
     const handleDisplay = () =>{
+     
         if(navIs === 'map'){
-            // console.log(map)
-            return <div id='map-container'></div>
-            // return mapsIframeOne
+
+            return <Map lat={userLat} lng={userLng} isMarkerShown/>
         }
         if(navIs === 'list'){
             return(
@@ -86,8 +63,7 @@ export default function OneK(){
     }
     return(
         <div id='oneK-container'>
-            {/* {handleDisplay()} */}
-            <MyMapComponent isMarkerShown/>
+            {handleDisplay()}
         <Footer/>
         </div>
     )

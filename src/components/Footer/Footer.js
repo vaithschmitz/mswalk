@@ -8,10 +8,10 @@ import ListIcon from './view-list.svg'
 export default function Footer(){
     return(
         <div id='Footer-Container'>
-            <div><img class='Footer-icon' src={MapIcon}></img></div>
-            <div><img class='Footer-icon' src={ListIcon}></img></div>
-            <div><img class='Footer-icon' src={QuestionIcon}></img></div>
-            <div><img class='Footer-icon' src={InfoIcon}></img></div>
+            <div><img className='Footer-icon' src={MapIcon} alt='Map Icon'></img></div>
+            <div><img className='Footer-icon' src={ListIcon} alt='List Icon'></img></div>
+            <div><img className='Footer-icon' src={QuestionIcon} alt='Question Icon'></img></div>
+            <div><img className='Footer-icon' src={InfoIcon} alt='Info Icon'></img></div>
         </div>
     )
     
