@@ -1,0 +1,17 @@
+.List-container{
+    height: 10vh;
+    width: 90vw;
+    margin: 5vw 5vh;
+    display: grid;
+    grid-template-areas: 'a b' 'b b'
+}
+
+.List-number{
+    grid-area: a;
+    font-weight: bold;
+
+}
+
+.List-text{
+    grid-area: b
+}

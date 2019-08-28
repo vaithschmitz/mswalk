@@ -5,13 +5,14 @@ body{
 
 #Splash-Container{
     display: grid; 
+    margin-top: 5vh
 }
 
 #Splash-mslogo{
     justify-self: center;
     height: 10vh;
     width: 30vw;
-    object-fit: contain
+    object-fit: contain;
 }
 
 #Splash-mswalkldn{
