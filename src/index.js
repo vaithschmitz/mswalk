@@ -7,7 +7,6 @@ import Splash from './routes/Splash/Splash'
 import oneK from './routes/oneK/oneK'
 import * as serviceWorker from './serviceWorker';
 
-
 const routing = ( 
     <Router>
       <div id='desktopView'>
