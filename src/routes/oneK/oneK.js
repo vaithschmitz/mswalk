@@ -10,7 +10,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 
 export default function OneK(){
     const [navIs, setNavIs] = useState('map')
-
+    let REACT_APP_MAPSKEY = process.env.REACT_APP_MAPSKEY
     let userLat
     let userLng
     useEffect(() => {
@@ -34,7 +34,7 @@ export default function OneK(){
 
       const MyMapComponent = compose(
         withProps({
-          googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAPSKEY}&v=3.exp&libraries=geometry,drawing,places`,
+          googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${REACT_APP_MAPSKEY}&v=3.exp&libraries=geometry,drawing,places`,
           loadingElement: <div style={{ height: `100%` }} />,
           containerElement: <div style={{ height: `100%` }} />,
           mapElement: <div style={{ height: `100%` }} />,
