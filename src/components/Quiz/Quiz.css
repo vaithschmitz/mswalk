@@ -1,0 +1,33 @@
+.Quiz-container{
+    display: grid;
+    text-align: center;
+}
+
+.Quiz-question{
+    margin-bottom: 1.5vh
+}
+
+.Quiz-choice-container{
+    display: grid;
+}
+
+.Quiz-choice{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    margin-left: 10vw;
+    border: solid black 1px;
+    border-radius: 3px;
+    margin-bottom: 1vh;
+}
+
+.correct{
+    background-color: green;
+    transition: 0.2s
+}
+
+.false{
+    background-color: red;
+    transition: 0.2s
+}

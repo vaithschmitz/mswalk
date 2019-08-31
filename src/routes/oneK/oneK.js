@@ -4,10 +4,11 @@ import Map from '../../components/Map/Map'
 import Info from '../../components/Info/Info'
 import Footer from '../../components/Footer/Footer'
 import List from '../../components/List/List'
+import Quiz from '../../components/Quiz/Quiz'
 
 
 export default function OneK(){
-    const [navIs, setNavIs] = useState('map')
+    const [navIs, setNavIs] = useState('quiz')
     const [userLat, setUserLat] = useState()
     const [userLng, setUserLng] = useState()
 
@@ -49,7 +50,7 @@ export default function OneK(){
         if(navIs === 'quiz'){
             return(
                 <div>
-                    QUIZ
+                    <Quiz question='Question' correct={'answer1'} choice1={'answer1'} choice2={'answer2'} choice3={'answer3'} />
                 </div>
             )
         }
