@@ -28,6 +28,12 @@ export default function OneK(){
         getPosition()
     }, [])
 
+    const locUpdates = () => {
+        let showLoc = () => console.log(`Lat: ${userLat}, Lng:${userLng}`)
+        setInterval(showLoc(), 1000)
+    }
+    
+
     
     const handleDisplay = () =>{
      
@@ -66,6 +72,7 @@ export default function OneK(){
     return(
         <div id='oneK-container'>
             {handleDisplay()}
+            {locUpdates()}
         <Footer setNav={setNavIs}/>
         </div>
     )

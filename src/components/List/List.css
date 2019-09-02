@@ -1,7 +1,7 @@
 .List-container{
     width: 90vw;
-    margin-left: 5vw;
-    margin-top: 5vw;
+    padding-left: 5vw;
+    padding-top: 5vw;
     display: grid;
     grid-template-areas: 'a b c' 'd d d';
     

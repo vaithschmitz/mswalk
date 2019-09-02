@@ -1,7 +1,7 @@
 .Quiz-container{
     display: grid;
     text-align: center;
-    margin-top: 2vh;
+    padding-top: 2vh;
     font-weight: bold;
 }
 
@@ -12,7 +12,6 @@
 
 .Quiz-choice-container{
     display: grid;
-
 }
 
 .Quiz-answer{

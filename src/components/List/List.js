@@ -3,11 +3,11 @@ import './List.css'
 
 export default function List(props){
     return(
-        <div class='List-container'>
-            <div class='List-number'>
+        <div className='List-container'>
+            <div className='List-number'>
             {props.number}
             </div>
-            <div class='List-text'>{props.text}</div>
+            <div className='List-text'>{props.text}</div>
             
         </div>
     )

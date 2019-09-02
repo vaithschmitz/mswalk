@@ -11,11 +11,11 @@ withProps({
     containerElement: <div style={{ height: `100%` }} />,
     mapElement: <div style={{ height: `100%` }} />,
 }),
-withScriptjs,
-withGoogleMap
+    withScriptjs,
+    withGoogleMap
 )((props) =>
 <GoogleMap
-    defaultZoom={8}
+    defaultZoom={14}
     defaultCenter={{ lat: props.lat, lng: props.lng }}
 >
     {props.isMarkerShown && <Marker position={{ lat: props.lat, lng: props.lng  }} />}

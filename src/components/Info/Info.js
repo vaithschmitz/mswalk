@@ -4,6 +4,8 @@ import './Info.css'
 export default function Info(){
     return(
         <div id='Info-container'>
+            <a id='Info-Splash' href='/'>SHOW ALL DISTANCES</a>
+            <br/><br/>
             <div id='Info-basic'>
             First aiders will be available at the
             start/finish area in Battersea Park.
