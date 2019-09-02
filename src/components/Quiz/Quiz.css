@@ -2,10 +2,12 @@
     display: grid;
     text-align: center;
     margin-top: 2vh;
+    font-weight: bold;
 }
 
 .Quiz-question{
-    margin-bottom: 1.5vh
+    margin-bottom: 1.5vh;
+    color: rgb(209, 73, 0);
 }
 
 .Quiz-choice-container{
@@ -21,6 +23,6 @@
     margin-left: 10vw;
     border: solid white 1px;
     border-radius: 3px;
-    background-color: rgba(209, 73, 0, 0.63);
+    background-color: rgb(209, 73, 0);
     color: white;
 }

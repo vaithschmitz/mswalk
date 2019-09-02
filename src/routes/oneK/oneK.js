@@ -51,12 +51,13 @@ export default function OneK(){
             return(
                 <div>
                     <Quiz question='Question' answer={'When you get to marshal point 2, take the middle of the three paths, keeping the football pitches on your left.'}/>
+                    <Quiz question='Another One' answer={'At the path crossroads, turn right onto the home straight and you are nearly there.'}/>
                 </div>
             )
         }
         if(navIs === 'info'){
             return(
-                <div>
+                <div id='oneK-info'>
                     <Info/>
                 </div>
             )

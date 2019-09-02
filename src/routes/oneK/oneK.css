@@ -3,7 +3,7 @@
     height: 100vh;
     width: 100vw;
     grid-template-areas: 'a' 'b'; 
-    grid-template-rows: 90vh 10vh;
+    grid-template-rows: 90% 10%;
 }
 
 
@@ -15,6 +15,12 @@
 }
 
 #oneK-list{
+    grid-area: a;
+    text-align: center;
+    overflow: scroll;
+}
+
+#oneK-info{
     grid-area: a;
     text-align: center;
     overflow: scroll;
