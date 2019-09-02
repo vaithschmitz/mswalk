@@ -24,4 +24,5 @@
     grid-area: a;
     text-align: center;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
 }
