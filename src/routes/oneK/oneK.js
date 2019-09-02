@@ -50,7 +50,7 @@ export default function OneK(){
         if(navIs === 'quiz'){
             return(
                 <div>
-                    <Quiz question='Question' correct={'answer1'} choice1={'answer1'} choice2={'answer2'} choice3={'answer3'} />
+                    <Quiz question='Question' answer={'answer'}/>
                 </div>
             )
         }

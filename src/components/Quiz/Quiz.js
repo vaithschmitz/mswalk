@@ -1,22 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Quiz.css'
 
 export default function Quiz(props){
-    const checkAnswer = (e) => {
-        if(e.target.textContent === props.correct){
-            e.target.classList.add('correct')
-        }
-        else{
-            e.target.classList.add('false')
-        }
-    } 
+    const [isRevealed, setIsRevealed] = useState(false)
     return(
         <div className='Quiz-container'>
             <div className='Quiz-question'>{props.question}</div> 
-            <div className='Quiz-choice-container'>
-                <div className='Quiz-choice' onClick={(e)=> checkAnswer(e)}>{props.choice1}</div>
-                <div className='Quiz-choice' onClick={(e)=> checkAnswer(e)}>{props.choice2}</div>
-                <div className='Quiz-choice' onClick={(e)=> checkAnswer(e)}>{props.choice3}</div>
+            <div className='Quiz-choice-container' onClick={()=> setIsRevealed(!isRevealed)}>
+                {isRevealed ? <div className='Quiz-answer'> {props.answer}</div> : <div className='Quiz-answer'> CLICK ME</div>}
             </div>
         </div>
     )
