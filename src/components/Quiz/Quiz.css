@@ -1,6 +1,7 @@
 .Quiz-container{
     display: grid;
     text-align: center;
+    margin-top: 2vh;
 }
 
 .Quiz-question{
@@ -9,6 +10,7 @@
 
 .Quiz-choice-container{
     display: grid;
+
 }
 
 .Quiz-answer{
@@ -17,7 +19,8 @@
     justify-content: center;
     width: 80vw;
     margin-left: 10vw;
-    border: solid black 1px;
+    border: solid white 1px;
     border-radius: 3px;
-    margin-bottom: 1vh;
+    background-color: rgba(209, 73, 0, 0.63);
+    color: white;
 }

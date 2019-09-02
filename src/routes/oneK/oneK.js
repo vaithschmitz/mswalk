@@ -50,7 +50,7 @@ export default function OneK(){
         if(navIs === 'quiz'){
             return(
                 <div>
-                    <Quiz question='Question' answer={'answer'}/>
+                    <Quiz question='Question' answer={'When you get to marshal point 2, take the middle of the three paths, keeping the football pitches on your left.'}/>
                 </div>
             )
         }
@@ -65,7 +65,7 @@ export default function OneK(){
     return(
         <div id='oneK-container'>
             {handleDisplay()}
-        <Footer/>
+        <Footer setNav={setNavIs}/>
         </div>
     )
 }
