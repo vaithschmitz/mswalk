@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './twentyK.css'
 import Map from '../../components/Map/Map'
 import Info from '../../components/Info/Info'
-import Footer from '../../components/Footer/Footer'
+import Footer from '../../components/Navigation/Navigation'
 import List from '../../components/List/List'
 import Quiz from '../../components/Quiz/Quiz'
 

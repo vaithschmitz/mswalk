@@ -2,13 +2,13 @@ import React, {useState, useEffect} from 'react'
 import './oneK.css'
 import Map from '../../components/Map/Map'
 import Info from '../../components/Info/Info'
-import Footer from '../../components/Footer/Footer'
+import Navigation from '../../components/Navigation/Navigation'
 import List from '../../components/List/List'
 import Quiz from '../../components/Quiz/Quiz'
 
 
 export default function OneK(){
-    const [navIs, setNavIs] = useState('quiz')
+    const [navIs, setNavIs] = useState('info')
     const [userLat, setUserLat] = useState()
     const [userLng, setUserLng] = useState()
 
@@ -55,7 +55,7 @@ export default function OneK(){
         }
         if(navIs === 'quiz'){
             return(
-                <div>
+                <div id='oneK-quiz'>
                     <Quiz question='Question' answer={'When you get to marshal point 2, take the middle of the three paths, keeping the football pitches on your left.'}/>
                     <Quiz question='Another One' answer={'At the path crossroads, turn right onto the home straight and you are nearly there.'}/>
                 </div>
@@ -73,7 +73,7 @@ export default function OneK(){
         <div id='oneK-container'>
             {handleDisplay()}
             {locUpdates()}
-        <Footer setNav={setNavIs}/>
+            <Navigation id='oneK-Navigation' setNav={setNavIs}/>
         </div>
     )
 }

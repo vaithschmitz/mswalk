@@ -1,9 +1,9 @@
 #Info-container{
-    text-align: center;
     width: 90vw;
     margin-left: 5vw;
     margin-right: 5vw;
-    margin-top: 10vh;
+    margin-top: 10%;
+    text-align: center;
 }
 #Info-important{
     background-color: #D14900;

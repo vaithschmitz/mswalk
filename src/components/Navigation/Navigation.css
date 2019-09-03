@@ -1,0 +1,18 @@
+.Navigation-Container{
+    display: grid;
+    height: 9vh;
+    grid-template-columns: 25vw 25vw 25vw 25vw;
+    text-align: center;
+    position: fixed;
+    z-index: 10;
+    background-color: white;
+    top: 0vh;
+}
+
+.Navigation-icon{
+    height: 8vh; 
+    position: relative;
+    top: 1vh;
+    object-fit: contain;
+}
+

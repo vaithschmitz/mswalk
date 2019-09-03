@@ -1,12 +1,12 @@
 .Quiz-container{
     display: grid;
     text-align: center;
-    padding-top: 2vh;
+    /* padding-top: 2vh; */
     font-weight: bold;
 }
 
 .Quiz-question{
-    margin-bottom: 1.5vh;
+    /* margin-bottom: 1.5vh; */
     color: rgb(209, 73, 0);
 }
 
