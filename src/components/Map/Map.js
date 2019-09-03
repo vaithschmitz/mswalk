@@ -15,7 +15,12 @@ function MyDirectionsRenderer(props) {
         {
           origin: new google.maps.LatLng(origin.lat, origin.lng),
           destination: new google.maps.LatLng(destination.lat, destination.lng),
-          travelMode: travelMode
+          travelMode: travelMode,
+          waypoints: [
+              {location: new google.maps.LatLng(51.480077, -0.154557), stopover: true},
+              {location: new google.maps.LatLng(51.478175, -0.157766), stopover: true},
+              {location: new google.maps.LatLng(51.478936, -0.160094), stopover: true},
+        ]
         },
         (result, status) => {
           if (status === google.maps.DirectionsStatus.OK) {
@@ -50,8 +55,8 @@ withProps({
 >
     {props.isMarkerShown && <Marker position={{ lat: props.lat, lng: props.lng  }} />}
     <MyDirectionsRenderer
-      origin={{ lat: props.lat, lng: props.lng }}
-      destination={{ lat: 51.5510573, lng: -0.22638 }}
+      origin={{lat: 51.479329, lng: -0.158173}}
+      destination={{lat: 51.479329, lng: -0.158173}}
       travelMode={google.maps.TravelMode.WALKING}
     />
 </GoogleMap>
