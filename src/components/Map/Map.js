@@ -7,41 +7,60 @@ let REACT_APP_MAPSKEY = process.env.REACT_APP_MAPSKEY
 
 
 
-export const  MyDirectionsRenderer = (props) =>  {
+const MyDirectionsRenderer = (props) =>  {
     const [directions, setDirections] = useState(null);
     const { origin, destination, travelMode } = props;
     const [distance, setDistance] = useGlobal('distance')
-    const oneKDirections = [
-        {location: new google.maps.LatLng(51.480077, -0.154557), stopover: true},
-        {location: new google.maps.LatLng(51.478175, -0.157766), stopover: true},
-        {location: new google.maps.LatLng(51.478936, -0.160094), stopover: true},
-    ]
+    let myWaypoints
     
+    if(distance === 'oneK'){
+        myWaypoints = [
+            {location: new google.maps.LatLng(51.480077, -0.154557), stopover: true},
+            {location: new google.maps.LatLng(51.478175, -0.157766), stopover: true},
+            {location: new google.maps.LatLng(51.478936, -0.160094), stopover: true},
+        ]
+    }
+    else if(distance === 'sixK'){
+        myWaypoints = [
+            {location: new google.maps.LatLng(51.480476, -0.152779), stopover: true},
+            {location: new google.maps.LatLng(51.478357, -0.149744), stopover: true},
+            {location: new google.maps.LatLng(51.478557, -0.150345), stopover: true},
+            {location: new google.maps.LatLng(51.476666, -0.156847), stopover: true},
+            {location: new google.maps.LatLng(51.476332, -0.156654), stopover: true},
+            {location: new google.maps.LatLng(51.475630, -0.162533), stopover: true},
+            {location: new google.maps.LatLng(51.479579, -0.165473), stopover: true},
+            {location: new google.maps.LatLng(51.483521, -0.167329), stopover: true},
+            {location: new google.maps.LatLng(51.483488, -0.166031), stopover: true},
+            {location: new google.maps.LatLng(51.484303, -0.163799), stopover: true},
+            {location: new google.maps.LatLng(51.489626, -0.155797), stopover: true},
+            {location: new google.maps.LatLng(51.483105, -0.152299), stopover: true},
+            {location: new google.maps.LatLng(51.481735, -0.162577), stopover: true},
+            {location: new google.maps.LatLng(51.481080, -0.162330), stopover: true},
+            {location: new google.maps.LatLng(51.479851, -0.164615), stopover: true},
+            {location: new google.maps.LatLng(51.478929, -0.160077), stopover: true},
+        ]
+    }
   
     useEffect(() => {
       const directionsService = new google.maps.DirectionsService();
       console.log(distance)
 
-    //   directionsService.route(
-    //     {
-    //       origin: new google.maps.LatLng(origin.lat, origin.lng),
-    //       destination: new google.maps.LatLng(destination.lat, destination.lng),
-    //       travelMode: travelMode,
-    //       waypoints: [
-    //         {location: new google.maps.LatLng(51.480077, -0.154557), stopover: true},
-    //         {location: new google.maps.LatLng(51.478175, -0.157766), stopover: true},
-    //         {location: new google.maps.LatLng(51.478936, -0.160094), stopover: true},
-    //   ]
+      directionsService.route(
+        {
+          origin: new google.maps.LatLng(origin.lat, origin.lng),
+          destination: new google.maps.LatLng(destination.lat, destination.lng),
+          travelMode: travelMode,
+          waypoints: myWaypoints
       
-    //     },
-    //     (result, status) => {
-    //       if (status === google.maps.DirectionsStatus.OK) {
-    //         setDirections(result);
-    //       } else {
-    //         console.error(`error fetching directions ${result}`);
-    //       }
-    //     }
-    //   );
+        },
+        (result, status) => {
+          if (status === google.maps.DirectionsStatus.OK) {
+            setDirections(result);
+          } else {
+            console.error(`error fetching directions ${result}`);
+          }
+        }
+      );
     }, [directions]);
   
     return (

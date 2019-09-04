@@ -1,6 +1,5 @@
 /* global google */
 import React, {useState, useEffect, useGlobal} from 'reactn'
-// import {} from 'reactn'
 import '../routeStyles.css'
 import Map from '../../components/Map/Map'
 import MyDirectionsRenderer from '../../components/Map/Map'
@@ -11,7 +10,7 @@ import Quiz from '../../components/Quiz/Quiz'
 
 
 export default function OneK(){
-    const [navIs, setNavIs] = useState('info')
+    const [navIs, setNavIs] = useState('list')
     const [userLat, setUserLat] = useState()
     const [userLng, setUserLng] = useState()
     const [distance, setDistance] = useGlobal('distance')
@@ -87,7 +86,6 @@ export default function OneK(){
             {/* {locUpdates()} */}
             <button onClick={() =>console.log(distance)}> CLICK ME</button>
             <Navigation id='oneK-Navigation' setNav={setNavIs}/>
-            <Map lat={userLat} lng={userLng} isMarkerShown/>
         </div>
     )
 }
