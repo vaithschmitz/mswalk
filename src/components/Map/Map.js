@@ -1,35 +1,47 @@
 /* global google */
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useGlobal} from 'reactn'
 import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, DirectionsRenderer } from "react-google-maps"
 
 let REACT_APP_MAPSKEY = process.env.REACT_APP_MAPSKEY
 
-function MyDirectionsRenderer(props) {
+
+
+export const  MyDirectionsRenderer = (props) =>  {
     const [directions, setDirections] = useState(null);
     const { origin, destination, travelMode } = props;
+    const [distance, setDistance] = useGlobal('distance')
+    const oneKDirections = [
+        {location: new google.maps.LatLng(51.480077, -0.154557), stopover: true},
+        {location: new google.maps.LatLng(51.478175, -0.157766), stopover: true},
+        {location: new google.maps.LatLng(51.478936, -0.160094), stopover: true},
+    ]
+    
   
     useEffect(() => {
       const directionsService = new google.maps.DirectionsService();
-      directionsService.route(
-        {
-          origin: new google.maps.LatLng(origin.lat, origin.lng),
-          destination: new google.maps.LatLng(destination.lat, destination.lng),
-          travelMode: travelMode,
-          waypoints: [
-              {location: new google.maps.LatLng(51.480077, -0.154557), stopover: true},
-              {location: new google.maps.LatLng(51.478175, -0.157766), stopover: true},
-              {location: new google.maps.LatLng(51.478936, -0.160094), stopover: true},
-        ]
-        },
-        (result, status) => {
-          if (status === google.maps.DirectionsStatus.OK) {
-            setDirections(result);
-          } else {
-            console.error(`error fetching directions ${result}`);
-          }
-        }
-      );
+      console.log(distance)
+
+    //   directionsService.route(
+    //     {
+    //       origin: new google.maps.LatLng(origin.lat, origin.lng),
+    //       destination: new google.maps.LatLng(destination.lat, destination.lng),
+    //       travelMode: travelMode,
+    //       waypoints: [
+    //         {location: new google.maps.LatLng(51.480077, -0.154557), stopover: true},
+    //         {location: new google.maps.LatLng(51.478175, -0.157766), stopover: true},
+    //         {location: new google.maps.LatLng(51.478936, -0.160094), stopover: true},
+    //   ]
+      
+    //     },
+    //     (result, status) => {
+    //       if (status === google.maps.DirectionsStatus.OK) {
+    //         setDirections(result);
+    //       } else {
+    //         console.error(`error fetching directions ${result}`);
+    //       }
+    //     }
+    //   );
     }, [directions]);
   
     return (
@@ -52,6 +64,7 @@ withProps({
 <GoogleMap
     defaultZoom={14}
     defaultCenter={{ lat: props.lat, lng: props.lng }}
+    
 >
     {props.isMarkerShown && <Marker position={{ lat: props.lat, lng: props.lng  }} />}
     <MyDirectionsRenderer

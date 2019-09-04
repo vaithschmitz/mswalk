@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import './twentyK.css'
+import '../routeStyles.css'
 import Map from '../../components/Map/Map'
 import Info from '../../components/Info/Info'
 import Footer from '../../components/Navigation/Navigation'

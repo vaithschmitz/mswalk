@@ -1,6 +1,9 @@
-import React, {useState, useEffect} from 'react'
-import './oneK.css'
+/* global google */
+import React, {useState, useEffect, useGlobal} from 'reactn'
+// import {} from 'reactn'
+import '../routeStyles.css'
 import Map from '../../components/Map/Map'
+import MyDirectionsRenderer from '../../components/Map/Map'
 import Info from '../../components/Info/Info'
 import Navigation from '../../components/Navigation/Navigation'
 import List from '../../components/List/List'
@@ -11,6 +14,7 @@ export default function OneK(){
     const [navIs, setNavIs] = useState('info')
     const [userLat, setUserLat] = useState()
     const [userLng, setUserLng] = useState()
+    const [distance, setDistance] = useGlobal('distance')
 
     useEffect(()=>{
         const getPosition = () => {
@@ -38,8 +42,16 @@ export default function OneK(){
     const handleDisplay = () =>{
      
         if(navIs === 'map'){
+            const oneKWaypoints = [
+                [51.480077, -0.154557], 
+                [51.478175, -0.157766],
+                [51.478936, -0.160094]
+          ]
+          
 
-            return <Map lat={userLat} lng={userLng} isMarkerShown/>
+            return (
+            
+            <Map lat={userLat} lng={userLng} distance={'oneK'} isMarkerShown/>)
         }
         if(navIs === 'list'){
             return(
@@ -72,8 +84,10 @@ export default function OneK(){
     return(
         <div id='oneK-container'>
             {handleDisplay()}
-            {locUpdates()}
+            {/* {locUpdates()} */}
+            <button onClick={() =>console.log(distance)}> CLICK ME</button>
             <Navigation id='oneK-Navigation' setNav={setNavIs}/>
+            <Map lat={userLat} lng={userLng} isMarkerShown/>
         </div>
     )
 }
