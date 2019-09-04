@@ -58,7 +58,45 @@ const MyDirectionsRenderer = (props) =>  {
             {location: new google.maps.LatLng(51.485798, -0.149994), stopover: true},
             {location: new google.maps.LatLng(51.482237, -0.158678), stopover: true},
             {location: new google.maps.LatLng(51.479845, -0.164579), stopover: true},
-      
+        ]
+    }
+
+    else if(distance === 'twentyK'){
+        myWaypoints = [
+        {location: new google.maps.LatLng(51.480473, -0.152783), stopover: true},
+        {location: new google.maps.LatLng(51.482693, -0.155342), stopover: true},
+        {location: new google.maps.LatLng(51.482994, -0.149520), stopover: true},
+        {location: new google.maps.LatLng(51.485820, -0.149981), stopover: true},
+        {location: new google.maps.LatLng(51.488773, -0.129564), stopover: true},
+        {location: new google.maps.LatLng(51.486922, -0.125294), stopover: true},
+        {location: new google.maps.LatLng(51.494357, -0.121314), stopover: true},
+        {location: new google.maps.LatLng(51.500829, -0.119994), stopover: true},
+        {location: new google.maps.LatLng(51.500815, -0.120013), stopover: true},
+        {location: new google.maps.LatLng(51.507266, -0.116011), stopover: true},
+        // {location: new google.maps.LatLng(51.508528, -0.104671), stopover: true},
+        {location: new google.maps.LatLng(51.508434, -0.098598), stopover: true},
+        {location: new google.maps.LatLng(51.513295, -0.098330), stopover: true},
+        {location: new google.maps.LatLng(51.510818, -0.086732), stopover: true},
+        // {location: new google.maps.LatLng(51.510504, -0.082623), stopover: true},
+        {location: new google.maps.LatLng(51.509022, -0.078739), stopover: true},
+        {location: new google.maps.LatLng(51.507880, -0.078900), stopover: true},
+        {location: new google.maps.LatLng(51.504321, -0.076121), stopover: true},
+        // {location: new google.maps.LatLng(51.505890, -0.081378), stopover: true},
+        {location: new google.maps.LatLng(51.506471, -0.088255), stopover: true},
+        {location: new google.maps.LatLng(51.508448, -0.098619), stopover: true},
+        // {location: new google.maps.LatLng(51.513256, -0.098265), stopover: true},
+        {location: new google.maps.LatLng(51.514188, -0.104310), stopover: true},
+        // {location: new google.maps.LatLng(51.514188, -0.104310), stopover: true},
+        // {location: new google.maps.LatLng(51.511133, -0.111982), stopover: true},
+        {location: new google.maps.LatLng(51.507079, -0.122021), stopover: true},
+        {location: new google.maps.LatLng(51.500968, -0.126034), stopover: true},
+        // {location: new google.maps.LatLng(51.494389, -0.125090), stopover: true},
+        {location: new google.maps.LatLng(51.489032, -0.128706), stopover: true},
+        // {location: new google.maps.LatLng(51.485057, -0.141302), stopover: true},
+        // {location: new google.maps.LatLng(51.485678, -0.150153), stopover: true},
+        {location: new google.maps.LatLng(51.482057, -0.160120), stopover: true},
+        {location: new google.maps.LatLng(51.479845, -0.164615), stopover: true},
+        {location: new google.maps.LatLng(51.478896, -0.160141), stopover: true},
         ]
     }
   

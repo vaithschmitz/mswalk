@@ -6,7 +6,7 @@ import mswalkldn from './mswalkldn.png'
 import {KilometerButton} from '../../components/Splash/SplashComponents'
 
 export default function Splash(){   
-    setGlobal({distance : 'tenK'})
+    setGlobal({distance : null})
     const [distance, setDistance] = useGlobal('distance') 
 
     return(
