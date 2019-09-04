@@ -40,6 +40,27 @@ const MyDirectionsRenderer = (props) =>  {
             {location: new google.maps.LatLng(51.478929, -0.160077), stopover: true},
         ]
     }
+
+    else if(distance === 'tenK'){
+        myWaypoints = [
+            {location: new google.maps.LatLng(51.480473, -0.152783), stopover: true},
+            {location: new google.maps.LatLng(51.482693, -0.155342), stopover: true},
+            {location: new google.maps.LatLng(51.482994, -0.149520), stopover: true},
+            {location: new google.maps.LatLng(51.485820, -0.149981), stopover: true},
+            {location: new google.maps.LatLng(51.488773, -0.129564), stopover: true},
+            {location: new google.maps.LatLng(51.486922, -0.125294), stopover: true},
+            {location: new google.maps.LatLng(51.494357, -0.121314), stopover: true},
+            {location: new google.maps.LatLng(51.500829, -0.119994), stopover: true},
+            {location: new google.maps.LatLng(51.494438, -0.121268), stopover: true},
+            {location: new google.maps.LatLng(51.494692, -0.125055), stopover: true},
+            {location: new google.maps.LatLng(51.488562, -0.129424), stopover: true},
+            {location: new google.maps.LatLng(51.488562, -0.129424), stopover: true},
+            {location: new google.maps.LatLng(51.485798, -0.149994), stopover: true},
+            {location: new google.maps.LatLng(51.482237, -0.158678), stopover: true},
+            {location: new google.maps.LatLng(51.479845, -0.164579), stopover: true},
+      
+        ]
+    }
   
     useEffect(() => {
       const directionsService = new google.maps.DirectionsService();
