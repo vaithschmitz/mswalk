@@ -109,7 +109,7 @@ const MyDirectionsRenderer = (props) =>  {
           origin: new google.maps.LatLng(origin.lat, origin.lng),
           destination: new google.maps.LatLng(destination.lat, destination.lng),
           travelMode: travelMode,
-          waypoints: myWaypoints
+          waypoints: myWaypoints,
       
         },
         (result, status) => {
@@ -124,7 +124,7 @@ const MyDirectionsRenderer = (props) =>  {
   
     return (
       <React.Fragment>
-        {directions && <DirectionsRenderer directions={directions} />}
+        {directions && <DirectionsRenderer directions={directions} options={{ suppressMarkers: true, polylineOptions: { strokeColor: '#D14900' } }} />}
       </React.Fragment>
     );
   }
