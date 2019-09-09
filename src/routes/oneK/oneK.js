@@ -9,7 +9,7 @@ import Quiz from '../../components/Quiz/Quiz'
 
 
 export default function OneK(){
-    const [navIs, setNavIs] = useState('list')
+    const [navIs, setNavIs] = useState('map')
     const [userLat, setUserLat] = useState()
     const [userLng, setUserLng] = useState()
 

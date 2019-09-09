@@ -8,7 +8,7 @@ import Quiz from '../../components/Quiz/Quiz'
 
 
 export default function OneK(){
-    const [navIs, setNavIs] = useState('quiz')
+    const [navIs, setNavIs] = useState('map')
     const [userLat, setUserLat] = useState()
     const [userLng, setUserLng] = useState()
     useEffect(()=>{
