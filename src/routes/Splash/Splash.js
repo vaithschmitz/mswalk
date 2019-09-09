@@ -1,4 +1,4 @@
-import React, {setGlobal, useGlobal} from 'reactn'
+import React, {setGlobal, useGlobal, useEffect} from 'reactn'
 import {Link} from 'react-router-dom'
 import './Splash.css'
 import mslogo from './mslogo.png'
@@ -6,8 +6,27 @@ import mswalkldn from './mswalkldn.png'
 import {KilometerButton} from '../../components/Splash/SplashComponents'
 
 export default function Splash(){   
-    setGlobal({distance : null})
+    
     const [distance, setDistance] = useGlobal('distance') 
+    const [userLat, setUserLat] = useGlobal('userLat')
+    const [userLng, setUserLng] = useGlobal('userLng')
+
+    useEffect(()=>{
+        setGlobal({distance : null, userLat: null, userLng: null})
+        const getPosition = () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.watchPosition(showPosition) 
+            }
+                else {
+                    console.log('error')
+            }
+        }
+        const showPosition = (position) => {
+            setUserLat(position.coords.latitude)
+            setUserLng(position.coords.longitude)
+        }
+        getPosition()
+    }, [])
 
     return(
 

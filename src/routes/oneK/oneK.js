@@ -10,32 +10,13 @@ import Quiz from '../../components/Quiz/Quiz'
 
 export default function OneK(){
     const [navIs, setNavIs] = useState('map')
-    const [userLat, setUserLat] = useState()
-    const [userLng, setUserLng] = useState()
-    const [mapsError, setMapsError] = useState(false)
-
-    useEffect(()=>{
-        const getPosition = () => {
-            if (navigator.geolocation) {
-                navigator.geolocation.watchPosition(showPosition) 
-            }
-                else {
-                    console.log('error')
-                    setMapsError(true)
-            }
-        }
-        const showPosition = (position) => {
-            setUserLat(position.coords.latitude)
-            setUserLng(position.coords.longitude)
-        }
-        getPosition()
-    }, [])
-
+    const [userLat, setUserLat] = useGlobal('userLat')
+    const [userLng, setUserLng] = useGlobal('userLng')
 
     const handleDisplay = () =>{
      
         if(navIs === 'map'){
-            return mapsError ? <div> ERROR LOADING MAPS</div> : <Map lat={userLat} lng={userLng} isMarkerShown/>
+        return <Map lat={userLat} lng={userLng} isMarkerShown/>
         }
         if(navIs === 'list'){
             return(

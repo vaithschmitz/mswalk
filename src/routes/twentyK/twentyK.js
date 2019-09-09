@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useGlobal} from 'reactn'
 import '../routeStyles.css'
 import Map from '../../components/Map/Map'
 import Info from '../../components/Info/Info'
@@ -9,28 +9,9 @@ import Quiz from '../../components/Quiz/Quiz'
 
 export default function OneK(){
     const [navIs, setNavIs] = useState('map')
-    const [userLat, setUserLat] = useState()
-    const [userLng, setUserLng] = useState()
-    useEffect(()=>{
-        const getPosition = () => {
-            if (navigator.geolocation) {
-                navigator.geolocation.watchPosition(showPosition) 
-            }
-                else {
-                    console.log('error')
-            }
-        }
-        const showPosition = (position) => {
-            setUserLat(position.coords.latitude)
-            setUserLng(position.coords.longitude)
-        }
-        getPosition()
-    }, [])
+    const [userLat, setUserLat] = useGlobal('userLat')
+    const [userLng, setUserLng] = useGlobal('userLng')
 
-    const locUpdates = () => {
-        let showLoc = () => console.log(`Lat: ${userLat}, Lng:${userLng}`)
-        setInterval(showLoc(), 1000)
-    }
     const makeList = () => {
         let iterator = 1
         let buffer = []
@@ -118,7 +99,6 @@ export default function OneK(){
     return(
         <div id='oneK-container'>
             {handleDisplay()}
-            {locUpdates()}
         <Footer setNav={setNavIs}/>
         </div>
     )
