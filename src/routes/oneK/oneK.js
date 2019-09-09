@@ -12,6 +12,7 @@ export default function OneK(){
     const [navIs, setNavIs] = useState('map')
     const [userLat, setUserLat] = useState()
     const [userLng, setUserLng] = useState()
+    const [mapsError, setMapsError] = useState(false)
 
     useEffect(()=>{
         const getPosition = () => {
@@ -20,6 +21,7 @@ export default function OneK(){
             }
                 else {
                     console.log('error')
+                    setMapsError(true)
             }
         }
         const showPosition = (position) => {
@@ -33,16 +35,7 @@ export default function OneK(){
     const handleDisplay = () =>{
      
         if(navIs === 'map'){
-            const oneKWaypoints = [
-                [51.480077, -0.154557], 
-                [51.478175, -0.157766],
-                [51.478936, -0.160094]
-          ]
-          
-
-            return (
-            
-            <Map lat={userLat} lng={userLng} isMarkerShown/>)
+            return mapsError ? <div> ERROR LOADING MAPS</div> : <Map lat={userLat} lng={userLng} isMarkerShown/>
         }
         if(navIs === 'list'){
             return(
