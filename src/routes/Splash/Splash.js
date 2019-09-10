@@ -12,20 +12,22 @@ export default function Splash(){
     const [userLng, setUserLng] = useGlobal('userLng')
 
     useEffect(()=>{
-        setGlobal({distance : null, userLat: null, userLng: null})
-        const getPosition = () => {
-            if (navigator.geolocation) {
-                navigator.geolocation.watchPosition(showPosition) 
+        if(userLat === undefined && userLng === undefined){
+            setGlobal({distance : null, userLat: null, userLng: null})
+            const getPosition = () => {
+                if (navigator.geolocation) {
+                    navigator.geolocation.watchPosition(showPosition) 
+                }
+                    else {
+                        console.log('error')
+                }
             }
-                else {
-                    console.log('error')
+            const showPosition = (position) => {
+                setUserLat(position.coords.latitude)
+                setUserLng(position.coords.longitude)
             }
+            getPosition()
         }
-        const showPosition = (position) => {
-            setUserLat(position.coords.latitude)
-            setUserLng(position.coords.longitude)
-        }
-        getPosition()
     }, [])
 
     return(

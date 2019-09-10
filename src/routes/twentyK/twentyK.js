@@ -70,8 +70,13 @@ export default function OneK(){
     const handleDisplay = () =>{
      
         if(navIs === 'map'){
-
-            return <Map lat={userLat} lng={userLng} isMarkerShown/>
+            if(userLat === undefined && userLng === undefined){
+                return <div id='Maps-error'>Can't get Location</div>
+            }
+            else{
+                return <Map lat={userLat} lng={userLng} isMarkerShown/>
+            }
+        
         }
         if(navIs === 'list'){
             return(

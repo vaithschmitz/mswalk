@@ -19,7 +19,10 @@ export default function OneK(){
             if(userLat === undefined && userLng === undefined){
                 return <div id='Maps-error'>Can't get Location</div>
             }
-        // return <Map lat={userLat} lng={userLng} isMarkerShown/>
+            else{
+                return <Map lat={userLat} lng={userLng} isMarkerShown/>
+            }
+        
         }
         if(navIs === 'list'){
             return(
