@@ -9,7 +9,7 @@ import ListIcon from './menu.svg'
 export default function Navigation(props){
     return(
 
-        <div class='Navigation-Container'>
+        <div className='Navigation-Container'>
         <div><a href='/'><img className='Navigation-icon' src={HomeIcon} alt='Home Icon'></img></a></div>
         <div onClick={() => props.setNav('map')}><img className='Navigation-icon' src={MapIcon} alt='Map Icon'></img></div>
         <div onClick={() => props.setNav('list')}><img className='Navigation-icon' src={ListIcon} alt='List Icon'></img></div>

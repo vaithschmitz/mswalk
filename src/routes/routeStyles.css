@@ -16,3 +16,13 @@
     height: 100vh;
 
 }
+
+
+#Maps-error{
+    position: absolute;
+    left: 25vw;
+    bottom: 40vh;
+    font-weight: bold;
+    font-size: 5vw;
+    color: black
+}
