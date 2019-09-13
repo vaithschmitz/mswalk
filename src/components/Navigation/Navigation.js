@@ -1,6 +1,5 @@
 import React, {useState, useGlobal} from 'reactn'
 import './Navigation.css'
-import QuestionIcon from './gaming.svg'
 import HomeIcon from './home.svg'
 import MapIcon from './map.svg'
 import InfoIcon from './information.svg'

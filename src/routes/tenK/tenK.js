@@ -8,7 +8,7 @@ import Quiz from '../../components/Quiz/Quiz'
 
 
 export default function OneK(){
-    const [navIs, setNavIs] = useState('map')
+    const [nav, setNav] = useState('nav')
     const [userLat, setUserLat] = useGlobal('userLat')
     const [userLng, setUserLng] = useGlobal('userLng')
    
@@ -56,11 +56,11 @@ export default function OneK(){
 
     const handleDisplay = () =>{
      
-        if(navIs === 'map'){
+        if(nav === 'map'){
             return <Map lat={userLat} lng={userLng} isMarkerShown/>
         }
         
-        if(navIs === 'list'){
+        if(nav === 'list'){
             return(
                 <div id='oneK-list'>
                     {makeList()}
@@ -68,7 +68,7 @@ export default function OneK(){
             )
         }
 
-        if(navIs === 'info'){
+        if(nav === 'info'){
             return(
                 <div id='oneK-info'>
                     <Info/>
