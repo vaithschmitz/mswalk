@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useGlobal} from 'reactn'
 import {Map, View, Feature} from 'ol';
 import {transform, fromLonLat} from 'ol/proj.js';
-import {Point} from 'ol/geom.js'
+import {Point, LineString} from 'ol/geom.js'
 import TileLayer from 'ol/layer/Tile';
 import VectorLayer from 'ol/layer/Vector';
 import Vector from 'ol/source/Vector'
@@ -22,7 +22,7 @@ export default function OLMap(){
           })
         ],
         view: new View({
-          center: transform([-0.158173, 51.4793290], 'EPSG:4326', 'EPSG:3857'),
+          center: transform([userLng, userLat], 'EPSG:4326', 'EPSG:3857'),
           zoom: 15
         })
       });
@@ -33,8 +33,15 @@ export default function OLMap(){
         ),  
     });
 
+    let route = new Feature();
+    let coordinates = [[-0.154557, 51.480077], [-0.157766, 51.478175], [-0.160094, 51.478936]];
+    let geometry = new LineString(coordinates);
+    geometry.transform('EPSG:4326', 'EPSG:3857'); //Transform to your map projection
+    route.setGeometry(geometry);
+
+
     let vectorSource = new Vector({
-        features: [userPosition]
+        features: [userPosition, route]
     });
 
     let markerVectorLayer = new VectorLayer({
