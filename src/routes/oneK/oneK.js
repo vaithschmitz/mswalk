@@ -2,6 +2,7 @@
 import React, {useState, useEffect, useGlobal} from 'reactn'
 import '../routeStyles.css'
 import Map from '../../components/Map/Map'
+import OLMap from '../../components/OLMap/OLMap'
 import Info from '../../components/Info/Info'
 import Navigation from '../../components/Navigation/Navigation'
 import List from '../../components/List/List'
@@ -16,8 +17,7 @@ export default function OneK(){
     const handleDisplay = () =>{
      
         if(nav === 'map'){
-            return <Map lat={userLat} lng={userLng} isMarkerShown/>
-        
+            return <OLMap />
         }
         if(nav === 'list'){
             return(
