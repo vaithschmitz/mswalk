@@ -59,7 +59,7 @@ export default function OneK(){
             `At marshal point 22, head back over Chelsea Bridge on the left hand side.`,
             `On the far side of Chelsea Bridge, cross at the marked crossing and enter the park through the Chelsea Gate. Bear right and join the path alongside the river.`,
             `Continue along the river, passing the famous Peace Pagoda on your left. Look for the arrow to show you when to turn left and join the North Carriage Drive.`,
-            <Quiz question={`Did you know?`} answer={`The London Peace Pagoda in Battersea Park is one of two in the UK, the other being in Milton Keynes. It was offered to the people of London by the Nipponzan Myohoji Buddhist Order as part of the 1984 Peace Year.`}/>
+            <Quiz question={`Did you know?`} answer={`The London Peace Pagoda in Battersea Park is one of two in the UK, the other being in Milton Keynes. It was offered to the people of London by the Nipponzan Myohoji Buddhist Order as part of the 1984 Peace Year.`}/>,
             `When you reach the crossroads at marshal point 23, turn hard left onto Maple Leaf Walk. You’re on the home stretch!`,
             `Turn left onto Central Avenue and continue to the Finish Line at the Bandstand. Well done!`,
             <Quiz question={`Well done, you did it! You are now part of a special group of people who have walked, rolled or strolled to stop MS! How many people have taken part in MS Walk London since it started in 2013 though?`} answer={`3900`}/>
@@ -82,7 +82,7 @@ export default function OneK(){
         if(nav === 'map'){
             return <Map lat={userLat} lng={userLng} isMarkerShown/>
         }
-        
+
         if(nav === 'list'){
             return(
                 <div id='oneK-list'>
