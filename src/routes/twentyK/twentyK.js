@@ -26,7 +26,7 @@ export default function OneK(){
             `Continue straight on along the river towards Lambeth Bridge. Go through the underpass below the end of Lambeth Bridge, passing marshal point 7.`,
             `Walk straight ahead towards Westminster Bridge. Take in the fantastic view of the Houses of Parliament on the other side of the Thames. Take some photos!`,
             `At marshal point 8, walk straight on through the underpass below the end of Westminster Bridge. Head along the South Bank, past the Sea Life Centre, the London Eye and Jubilee Gardens.`,
-            <Quiz question={`How many capsules can you spot on the London Eye?`} answer={`32`}/>
+            <Quiz question={`How many capsules can you spot on the London Eye?`} answer={`32`}/>,
             `Continue forward along the South Bank, beneath the Golden Jubilee footbridges and Hungerford Rail Bridge, passing the South Bank Centre on your right.`,
             `Continue straight ahead, beneath Waterloo Bridge, passing the National Theatre on your right.`,
             `Continue straight ahead, past the Oxo Tower, and walk through the underpass below Blackfriars Bridge.`,
