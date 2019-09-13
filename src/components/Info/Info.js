@@ -4,8 +4,7 @@ import './Info.css'
 export default function Info(){
     return(
         <div id='Info-container'>
-            {/* <a id='Info-Splash' href='/'>SHOW ALL DISTANCES</a> */}
-            <br/><br/>
+            <br/>
             <div id='Info-basic'>
             First aiders will be available at the
             start/finish area in Battersea Park.
@@ -28,20 +27,19 @@ export default function Info(){
             Battersea Park.
             </div>
 
-
             <div id='Info-important'>
 
-            Should you have to drop
-            out early for any reason, you
-            must let a marshal know or
-            call event control. We don’t
-            want to have to call you later
-            to check you aren’t lost!
+            We want to make sure you
+            have fun but most importantly,
+            stay safe. If you need to drop
+            out early, please let a marshal
+            know or contact event control
+            on the number below.
             <br/>
             <br/>
             MS Society event control:
             <br/>
-            <a href='tel:+447851 963431'>07851 963431</a>
+            <a href='tel:+447715 428181'>07715 428181</a>
             </div>
         </div>
     )

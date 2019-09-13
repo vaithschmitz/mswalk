@@ -22,22 +22,21 @@ const MyDirectionsRenderer = (props) =>  {
     }
     else if(distance === 'sixK'){
         myWaypoints = [
-            {location: new google.maps.LatLng(51.480476, -0.152779), stopover: true},
-            {location: new google.maps.LatLng(51.478357, -0.149744), stopover: true},
-            {location: new google.maps.LatLng(51.478557, -0.150345), stopover: true},
-            {location: new google.maps.LatLng(51.476666, -0.156847), stopover: true},
-            {location: new google.maps.LatLng(51.476332, -0.156654), stopover: true},
-            {location: new google.maps.LatLng(51.475630, -0.162533), stopover: true},
-            {location: new google.maps.LatLng(51.479579, -0.165473), stopover: true},
-            {location: new google.maps.LatLng(51.483521, -0.167329), stopover: true},
-            {location: new google.maps.LatLng(51.483488, -0.166031), stopover: true},
-            {location: new google.maps.LatLng(51.484303, -0.163799), stopover: true},
-            {location: new google.maps.LatLng(51.489626, -0.155797), stopover: true},
-            {location: new google.maps.LatLng(51.483105, -0.152299), stopover: true},
-            {location: new google.maps.LatLng(51.481735, -0.162577), stopover: true},
-            {location: new google.maps.LatLng(51.481080, -0.162330), stopover: true},
-            {location: new google.maps.LatLng(51.479851, -0.164615), stopover: true},
-            {location: new google.maps.LatLng(51.478929, -0.160077), stopover: true},
+            {location: new google.maps.LatLng(51.480438, -0.152755), stopover: true},
+            {location: new google.maps.LatLng(51.482716, -0.155405), stopover: true},
+            {location: new google.maps.LatLng(51.483598, -0.149611), stopover: true},
+            {location: new google.maps.LatLng(51.483504, -0.146113), stopover: true},
+            {location: new google.maps.LatLng(51.481139, -0.142830), stopover: true},
+            {location: new google.maps.LatLng(51.479896, -0.140910), stopover: true},
+            {location: new google.maps.LatLng(51.474463, -0.155866), stopover: true},
+            {location: new google.maps.LatLng(51.475619, -0.156381), stopover: true},
+            {location: new google.maps.LatLng(51.477757, -0.148967), stopover: true},
+            {location: new google.maps.LatLng(51.483610, -0.149696), stopover: true},
+            {location: new google.maps.LatLng(51.482224, -0.159168), stopover: true},
+            {location: new google.maps.LatLng(51.481750, -0.162623), stopover: true},
+            {location: new google.maps.LatLng(51.479859, -0.164619), stopover: true},
+            {location: new google.maps.LatLng(51.478923, -0.160070), stopover: true},
+  
         ]
     }
 

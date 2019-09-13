@@ -7,7 +7,7 @@ export default function Quiz(props){
         <div className='Quiz-container'>
             <div className='Quiz-question'>{props.question}</div> 
             <div className='Quiz-choice-container' onClick={()=> setIsRevealed(!isRevealed)}>
-                {isRevealed ? <div className='Quiz-answer'> {props.answer}</div> : <div className='Quiz-answer'> REVEAL ANSWER</div>}
+                {isRevealed ? <div className='Quiz-answer'> {props.answer}</div> : <div className='Quiz-answer'> TAP TO REVEAL</div>}
             </div>
         </div>
     )

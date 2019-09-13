@@ -10,10 +10,11 @@ export default function Splash(){
     const [distance, setDistance] = useGlobal('distance') 
     const [userLat, setUserLat] = useGlobal('userLat')
     const [userLng, setUserLng] = useGlobal('userLng')
+    const [nav, setNav] = useGlobal('nav')
 
     useEffect(()=>{
         if(userLat === undefined && userLng === undefined){
-            setGlobal({distance : null, userLat: null, userLng: null})
+            setGlobal({distance : null, userLat: null, userLng: null, nav: 'map'})
             const getPosition = () => {
                 if (navigator.geolocation) {
                     navigator.geolocation.watchPosition(showPosition) 
@@ -42,9 +43,6 @@ export default function Splash(){
         <Link onClick={()=>setDistance('tenK')} to='/tenK' className='Splash-btn'><KilometerButton  kilometer={'10K'}/></Link>
         <Link onClick={()=>setDistance('twentyK')} to='/twentyK' className='Splash-btn'><KilometerButton  kilometer={'20K'}/></Link>
                     
-            
-            
-
         <img src={mslogo} id='Splash-mslogo' alt='MS Society Logo'></img>
         </div>
     )

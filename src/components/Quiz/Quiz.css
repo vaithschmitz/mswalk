@@ -1,27 +1,37 @@
 .Quiz-container{
+    width: 90vw; 
+    padding-left: 5vw;
+    padding-top: 5vw;
     display: grid;
-    text-align: center;
-    /* padding-top: 2vh; */
-    font-weight: bold;
+    grid-template-areas: 'a' 'b';
 }
 
-.Quiz-question{
-    /* margin-bottom: 1.5vh; */
-    color: rgb(209, 73, 0);
+.Quiz-question{ 
+    grid-area: a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: #6E26B1;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold
 }
 
 .Quiz-choice-container{
     display: grid;
 }
 
+
 .Quiz-answer{
+    grid-area: a;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80vw;
-    margin-left: 10vw;
-    border: solid white 1px;
+    width: 90vw;
+    margin-top: 2vh;
+    border: dashed rgb(209, 73, 0);
     border-radius: 3px;
-    background-color: rgb(209, 73, 0);
-    color: white;
 }

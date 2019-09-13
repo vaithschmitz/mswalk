@@ -2,13 +2,13 @@ import React, {useState, useEffect, useGlobal} from 'reactn'
 import '../routeStyles.css'
 import Map from '../../components/Map/Map'
 import Info from '../../components/Info/Info'
-import Footer from '../../components/Navigation/Navigation'
+import Navigation from '../../components/Navigation/Navigation'
 import List from '../../components/List/List'
 import Quiz from '../../components/Quiz/Quiz'
 
 
 export default function OneK(){
-    const [navIs, setNavIs] = useState('map')
+    const [nav, setNav] = useGlobal('nav')
     const [userLat, setUserLat] = useGlobal('userLat')
     const [userLng, setUserLng] = useGlobal('userLng')
 
@@ -26,6 +26,7 @@ export default function OneK(){
             `Continue straight on along the river towards Lambeth Bridge. Go through the underpass below the end of Lambeth Bridge, passing marshal point 7.`,
             `Walk straight ahead towards Westminster Bridge. Take in the fantastic view of the Houses of Parliament on the other side of the Thames. Take some photos!`,
             `At marshal point 8, walk straight on through the underpass below the end of Westminster Bridge. Head along the South Bank, past the Sea Life Centre, the London Eye and Jubilee Gardens.`,
+            <Quiz question={`How many capsules can you spot on the London Eye?`} answer={`32`}/>
             `Continue forward along the South Bank, beneath the Golden Jubilee footbridges and Hungerford Rail Bridge, passing the South Bank Centre on your right.`,
             `Continue straight ahead, beneath Waterloo Bridge, passing the National Theatre on your right.`,
             `Continue straight ahead, past the Oxo Tower, and walk through the underpass below Blackfriars Bridge.`,
@@ -37,6 +38,7 @@ export default function OneK(){
             `At this junction, continue straight over onto Eastcheap. The main entrance to Monument Station will be on your right. As you pass, look to your right to catch a glimpse of the Monument itself.`,
             `Continue straight on as Eastcheap becomes Great Tower Street. At the T-junction, cross over at the traffic lights and walk between Zizzi restaurant and All Hallows by the Tower Church, look out for the green spire. You’re now at marshal point 11.`,
             `Follow the pedestrianised area along the left had side of the church and the tower will be right in front of you. Bear right towards the river, then turn left and walk in front of the Tower of London towards Tower Bridge and marshal point 12.`,
+            <Quiz question={`Look out for the Yeoman Warders or Beefeaters as they are popularly known as. They are the ceremonial guardians of the Tower of London and were originally formed by which Monarch?`} answer={`Henry VII`}/>
             `Pass through the archway and turn left to take stairs up onto Tower Bridge. Turn left at the top of the stairs and cross straight over the bridge. For step-free access, turn left past the stairs and up St Katherine’s Way, then turn left onto the bridge approach.`,
             `Stay on the left hand side of Tower Bridge as you cross. On the far side, you will reach marshal point 13. Take the stairs or lift down to the riverside.`,
             `Once down the stairs (they are signposted ‘Engine Room’), turn left to go back under the bridge (turn right if exiting the lift!). Head west towards City Hall and back in the direction of Battersea Park.`,
@@ -57,11 +59,19 @@ export default function OneK(){
             `At marshal point 22, head back over Chelsea Bridge on the left hand side.`,
             `On the far side of Chelsea Bridge, cross at the marked crossing and enter the park through the Chelsea Gate. Bear right and join the path alongside the river.`,
             `Continue along the river, passing the famous Peace Pagoda on your left. Look for the arrow to show you when to turn left and join the North Carriage Drive.`,
+            <Quiz question={`Did you know?`} answer={`The London Peace Pagoda in Battersea Park is one of two in the UK, the other being in Milton Keynes. It was offered to the people of London by the Nipponzan Myohoji Buddhist Order as part of the 1984 Peace Year.`}/>
             `When you reach the crossroads at marshal point 23, turn hard left onto Maple Leaf Walk. You’re on the home stretch!`,
-            `Turn left onto Central Avenue and continue to the Finish Line at the Bandstand. Well done!` ]
+            `Turn left onto Central Avenue and continue to the Finish Line at the Bandstand. Well done!`,
+            <Quiz question={`Well done, you did it! You are now part of a special group of people who have walked, rolled or strolled to stop MS! How many people have taken part in MS Walk London since it started in 2013 though?`} answer={`3900`}/>
+        ]
         
-            for(let i = 0; i< list.length; i++){
-                buffer.push(<List number={iterator} text={list[i]}/>)
+            for(let i = 0; i< list.length; i++){               
+                if(typeof(list[i]) === 'string'){
+                    buffer.push(<List number={iterator} text={list[i]}/>)
+                }
+                else if(typeof(list[i] != 'string')){
+                    buffer.push(list[i])
+                }
                 iterator++
             }
             return buffer
@@ -69,31 +79,18 @@ export default function OneK(){
 
     const handleDisplay = () =>{
      
-        if(navIs === 'map'){
-            if(userLat === undefined && userLng === undefined){
-                return <div id='Maps-error'>Can't get Location</div>
-            }
-            else{
-                return <Map lat={userLat} lng={userLng} isMarkerShown/>
-            }
-        
+        if(nav === 'map'){
+            return <Map lat={userLat} lng={userLng} isMarkerShown/>
         }
-        if(navIs === 'list'){
+        if(nav === 'list'){
             return(
                 <div id='oneK-list'>
                     {makeList()}
                 </div>
             )
         }
-        if(navIs === 'quiz'){
-            return(
-                <div>
-                    <Quiz question='Question' answer={'When you get to marshal point 2, take the middle of the three paths, keeping the football pitches on your left.'}/>
-                    <Quiz question='Another One' answer={'At the path crossroads, turn right onto the home straight and you are nearly there.'}/>
-                </div>
-            )
-        }
-        if(navIs === 'info'){
+
+        if(nav === 'info'){
             return(
                 <div id='oneK-info'>
                     <Info/>
@@ -104,7 +101,7 @@ export default function OneK(){
     return(
         <div id='oneK-container'>
             {handleDisplay()}
-        <Footer setNav={setNavIs}/>
+            <Navigation id='oneK-Navigation'/>
         </div>
     )
 }
