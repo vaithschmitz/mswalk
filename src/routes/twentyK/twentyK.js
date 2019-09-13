@@ -82,6 +82,7 @@ export default function OneK(){
         if(nav === 'map'){
             return <Map lat={userLat} lng={userLng} isMarkerShown/>
         }
+        
         if(nav === 'list'){
             return(
                 <div id='oneK-list'>
