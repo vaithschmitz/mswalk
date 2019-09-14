@@ -104,7 +104,7 @@ export default function Map(props){
 
       
   }, []) 
-  
+
   var userPositionMarker = new window.H.map.Marker({
     lat: userLat,
     lng: userLng

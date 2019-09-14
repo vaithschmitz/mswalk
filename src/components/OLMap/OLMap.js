@@ -33,6 +33,10 @@ export default function OLMap(){
         ),  
     });
 
+  
+
+
+
     let route = new Feature();
     let coordinates = [[-0.154557, 51.480077], [-0.157766, 51.478175], [-0.160094, 51.478936]];
     let geometry = new LineString(coordinates);
@@ -47,8 +51,13 @@ export default function OLMap(){
     let markerVectorLayer = new VectorLayer({
         source: vectorSource,
       });
-    map.addLayer(markerVectorLayer);
-      
+
+      function addVectorLayer(){
+        map.addLayer(markerVectorLayer);
+      }
+      setInterval(() => {
+        addVectorLayer()
+      }, 1000);
     return(
         <div id='map'> </div>
     )
