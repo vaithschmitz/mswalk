@@ -58,3 +58,8 @@ export default function OLMap(){
 // {location: new google.maps.LatLng(51.480077, -0.154557), stopover: true},
 // {location: new google.maps.LatLng(51.478175, -0.157766), stopover: true},
 // {location: new google.maps.LatLng(51.478936, -0.160094), stopover: true},
+// 51.479329, -0.158173
+// 51.480077, -0.154557
+// 51.478175, -0.157766
+// 51.478936, -0.160094
+

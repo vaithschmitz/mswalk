@@ -58,7 +58,7 @@ export default function OneK(){
     const handleDisplay = () =>{
      
         if(nav === 'map'){
-            return <Map lat={userLat} lng={userLng} isMarkerShown/>
+            return <Map  isMarkerShown/>
         }
 
         if(nav === 'list'){
