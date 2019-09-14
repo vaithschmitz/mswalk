@@ -78,11 +78,7 @@ export default function Map(props){
     });
   
 
-  
-
-
-  
-    map.addObjects([routeLine, userPositionMarker]);
+    map.addObjects([routeLine]);
    
     }
   };
@@ -105,11 +101,13 @@ export default function Map(props){
       
   }, []) 
 
-  var userPositionMarker = new window.H.map.Marker({
+  let userPositionMarker = new window.H.map.Marker({
     lat: userLat,
     lng: userLng
     });
 
+
+  map.addObjects([userPositionMarker]);
 
     return (
         <div id="here-map" style={{width: '100%', height: '100%', background: 'grey' }} />
