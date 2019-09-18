@@ -101,7 +101,6 @@ const MyDirectionsRenderer = (props) =>  {
 
   useEffect(() => {
     const directionsService = new google.maps.DirectionsService();
-    console.log('I am rendering')
 
     directionsService.route(
       {
@@ -140,7 +139,8 @@ withProps({
 )((props) =>
 <GoogleMap
     defaultZoom={14}
-    defaultCenter={{ lat: props.lat, lng: props.lng }}
+    center={{ lat: props.lat, lng: props.lng }}
+
     
 >
     {props.isMarkerShown && <Marker position={{ lat: props.lat, lng: props.lng  }} />}
