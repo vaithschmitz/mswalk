@@ -14,6 +14,15 @@ code {
     monospace;
 }
 
+#desktopView{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5vh;
+  height: 100vh;
+
+}
+
 #mobileView{
   display: grid;
   height: 100vh;
@@ -24,9 +33,7 @@ code {
   #desktopView{
     display: none
   }
-  #mobileView{
-    display: none
-  }
+
 }
 
 @media screen and (min-width: 479px) {
