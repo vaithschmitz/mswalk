@@ -14,7 +14,23 @@ code {
     monospace;
 }
 
-#desktopView{
+#mobileView{
   display: grid;
   height: 100vh;
+}
+
+
+@media screen and (max-width: 479px) {
+  #desktopView{
+    display: none
+  }
+  #mobileView{
+    display: none
+  }
+}
+
+@media screen and (min-width: 479px) {
+  #mobileView{
+    display: none
+  }
 }

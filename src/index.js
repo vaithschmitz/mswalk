@@ -11,7 +11,10 @@ import * as serviceWorker from './serviceWorker';
 
 const routing = ( 
     <Router>
-      <div id='desktopView'>
+      <div id='desktopView'> 
+      PLEASE VISIT THIS SITE ON MOBILE.
+      </div>
+      <div id='mobileView'>
         <Switch id='MainApp'>
           <Route exact path="/" component={Splash} />
         </Switch>
@@ -20,6 +23,7 @@ const routing = (
         <Route exact path='/tenK' component={tenK}/>
         <Route exact path='/twentyK' component={twentyK}/>
       </div>
+      
     </Router>
   )
 
